@@ -5,6 +5,7 @@ project(wxWidgetsExamples)
 
 set(wxWidgets_CONFIGURATION "mswu")
 
+
 if(UNIX)
 	set(wxWidgets_USE_RELEASE --toolkit=base --prefix=/usr)
 	message(STATUS "Config for unix")
@@ -12,8 +13,7 @@ endif()
 
 if(WIN32)
 	set(wxWidgets_ROOT_DIR "${CMAKE_CURRENT_SOURCE_DIR}/wxWidgets/")  
-	set(wxWidgets_LIB_DIR "${wxWidgets_ROOT_DIR}/lib/vc_dll") 
-	
+	set(wxWidgets_LIB_DIR "${wxWidgets_ROOT_DIR}/lib/vc_dll") 	
 	message(STATUS "Config for win32")
 endif()
 
