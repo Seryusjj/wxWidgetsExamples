@@ -1,6 +1,6 @@
 #client cmakelists
 file(GLOB SRCS *.cpp *.h *.xmp)
-set(PROJECT_NAME example1)
+set(PROJECT_NAME example2)
 
 if(wxWidgets_FOUND)
      include(${wxWidgets_USE_FILE})
