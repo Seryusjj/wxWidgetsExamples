@@ -4,7 +4,7 @@ project(wxWidgetsExamples)
 
 
 set(wxWidgets_CONFIGURATION "mswu")
-
+SET(wxWidgets_USE_STATIC off)
 
 if(UNIX)
 	set(wxWidgets_USE_RELEASE --toolkit=base --prefix=/usr)
@@ -19,13 +19,14 @@ endif()
 
 
 
-find_package(wxWidgets COMPONENTS core base gl REQUIRED)
+find_package(wxWidgets COMPONENTS gl core base REQUIRED)
 
 
 if(UNIX)
 	add_definitions(-std=c++11)
     set(CMAKE_CXX_FLAGS "${wxWidgets_CXX_FLAGS}")
 endif()
+
 
 if (MSVC)
   set (CMAKE_CXX_FLAGS "/MT /DWIN32 /D_WINDOWS /W3 /GR /Zi /EHsc")

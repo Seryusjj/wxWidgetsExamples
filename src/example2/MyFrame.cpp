@@ -31,7 +31,7 @@ MyFrame::MyFrame(bool stereoWindow)
 
 	new MyGlCanvas(this, stereoWindow ? stereoAttribList : NULL);
 
-	SetIcon(wxICON(mondrian_xpm));
+	SetIcon(wxIcon(mondrian_xpm));
 
 	// Make a menubar
 	wxMenu *menu = new wxMenu;
