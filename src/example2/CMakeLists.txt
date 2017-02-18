@@ -13,5 +13,7 @@ if(wxWidgets_FOUND)
 						   ${wxWidgets_LIB_DIR} $<TARGET_FILE_DIR:${PROJECT_NAME}>)
 
 	 endif()
-     target_link_libraries(${PROJECT_NAME} ${wxWidgets_LIBRARIES})     
+
+
+     	target_link_libraries(${PROJECT_NAME} ${OPENGL_LIBRARIES} ${GLUT_LIBRARY} ${wxWidgets_LIBRARIES})     
 endif()

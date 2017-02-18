@@ -5,9 +5,13 @@ project(wxWidgetsExamples)
 
 set(wxWidgets_CONFIGURATION "mswu")
 SET(wxWidgets_USE_STATIC off)
+set(OPENGL_LIBRARIES "")
+set(GLUT_LIBRARY "")
 
 if(UNIX)
 	set(wxWidgets_USE_RELEASE --toolkit=base --prefix=/usr)
+        find_package(OpenGL REQUIRED)
+	find_package(GLUT REQUIRED)
 	message(STATUS "Config for unix")
 endif()
 
@@ -18,12 +22,12 @@ if(WIN32)
 endif()
 
 
-
+set(WX_USE_GL on)
 find_package(wxWidgets COMPONENTS gl core base REQUIRED)
 
 
 if(UNIX)
-	add_definitions(-std=c++11)
+    add_definitions(-std=c++11)
     set(CMAKE_CXX_FLAGS "${wxWidgets_CXX_FLAGS}")
 endif()
 
