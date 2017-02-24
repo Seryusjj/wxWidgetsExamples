@@ -5,14 +5,12 @@ project(wxWidgetsExamples)
 
 set(wxWidgets_CONFIGURATION "mswu")
 set(OPENGL_LIBRARIES "")
-set(GLUT_LIBRARY "")
 set(WX_USE_GL 1)
 set(BUILD_SHARED_LIBS on)
 
 if(UNIX)
 	set(wxWidgets_SELECT_OPTIONS --unicode  --version=3.1 --prefix=/usr)
         find_package(OpenGL REQUIRED)
-	find_package(GLUT REQUIRED)
 	message(STATUS "Config for unix")
 endif()
 
